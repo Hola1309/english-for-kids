@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style src="style.css">
+        header {
+            
+    left: 0px;
+    top: 0px;
+
+            position: fixed;
+            width: 100vw;
+            height: 100px;
+            background-color: chocolate;
+        }
+        body{
+            background-color: bisque;
+        }
+        .cards{
+            background-color: chocolate;
+            width: 300px;
+            height: 333px;
+            text-align:  center;
+            
+        }
+        input{
+            border: 0;
+            background-color: bisque;
+        }
+        .hidden-menu {
+  display: block;
+  position: fixed;
+  list-style:none;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: #eee;
+  height: 100%;
+  top: 0;
+  left: -200px;
+  transition: left .2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.hidden-menu-ticker {
+  display: none;
+}
+
+.btn-menu {
+  color: #fff;
+  background-color: #0058B9;
+  padding: 7px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  transition: left .23s;
+  z-index: 3;
+  width: 25px;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.btn-menu span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0 0;
+  transition: all .1s linear .23s;
+  position: relative;
+}
+.btn-menu span.first {
+  margin-top: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu {
+  left: 160px;
+}
+.hidden-menu-ticker:checked ~ .hidden-menu {
+  left: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+  -webkit-transform: rotate(45deg);
+  top: 8px;
+  
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+  opacity: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+  -webkit-transform: rotate(-45deg);
+  top: -8px;    
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+
+<label class="btn-menu" for="hmt">
+  <span class="first"></span>
+  <span class="second"></span>
+  <span class="third"></span>
+</label>
+
+<ul class="hidden-menu">
+    <li><input type="button" value="Lesson 1" onclick="numOfLesson=1;render()"></li> 
+    <li><input type="button" value="Lesson 2" onclick="numOfLesson=2;render()"></li> 
+    <li><input type="button" value="Lesson 3" onclick="numOfLesson=3;render()"></li> 
+    <li><input type="button" value="Lesson 4" onclick="numOfLesson=4;render()"></li> 
+    <li><input type="button" value="Lesson 5" onclick="numOfLesson=5;render()"></li> 
+    <li><input type="button" value="Lesson 6" onclick="numOfLesson=6;render()"></li> 
+    <li><input type="button" value="Lesson 7" onclick="numOfLesson=7;render()"></li> 
+    <li><input type="button" value="Lesson 8" onclick="numOfLesson=8;render()"></li> 
+</ul>
+    
+    <div style="width: 1260px; margin-left: auto;margin-right: auto;margin-top: 150px;">
+    <div style="display: grid; grid-template-columns: 300px 300px 300px 300px;
+    grid-column-gap: 20px;
+    grid-row-gap: 18px;" id="allcards">
+        <div class="cards" id="cards0"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards1"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards2"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards3"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards4"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards5"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards6"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+        <div class="cards" id="cards7"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
+    </div>
+</div>
+<div style="float: right;">
+    <input type="button" value="Start" onclick="training()">
+    <input type="button" value="Repeat" onclick="speak()">
+    <input type="button" value="Main Page" onclick="numOfLesson=0;render()">
+    <span>Errors:</span><span id="count">0</span></div>
+</body>
+<script src="index.js"></script>
+</html>
