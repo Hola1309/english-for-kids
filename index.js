@@ -343,7 +343,7 @@ var Start  = {
         senceRU:'Дедушка'
     },
     slide1:{
-        src:"./assets/Weather.jpg",
+        src:"https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg",
         senceEN:'2',
         senceRU:'Бабушка'
     },

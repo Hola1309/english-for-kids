@@ -90,7 +90,36 @@
 }
 .hidden-menu-ticker:checked ~ .btn-menu span.third {
   -webkit-transform: rotate(-45deg);
-  top: -8px;    
+  top: -8px;  
+  
+  }
+  #allcards{
+    display: grid; grid-template-columns: 300px 300px  300px 300px;
+    grid-column-gap: 20px;
+    grid-row-gap: 18px;
+    }
+  .rnd{
+    width: 1260px; margin-left: auto;margin-right: auto;
+  }
+  @media screen and (max-width: 1024px) {
+    #allcards{
+    display: grid; grid-template-columns: 300px 300px ;
+    grid-column-gap: 20px;
+    grid-row-gap: 18px;
+    }
+    .rnd{
+    width: 768px; margin-left: auto;margin-right: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+    #allcards{
+    display: grid; grid-template-columns: 300px ;
+    grid-column-gap: 20px;
+    grid-row-gap: 18px;
+    }
+    .rnd{
+    width: 320px; margin-left: auto;margin-right: auto;
+  }
 }
     </style>
     <meta charset="UTF-8">
@@ -117,10 +146,8 @@
     <li><input type="button" value="Lesson 8" onclick="numOfLesson=8;render()"></li> 
 </ul>
     
-    <div style="width: 1260px; margin-left: auto;margin-right: auto;margin-top: 150px;">
-    <div style="display: grid; grid-template-columns: 300px 300px 300px 300px;
-    grid-column-gap: 20px;
-    grid-row-gap: 18px;" id="allcards">
+    <div class="rnd" style="">
+    <div  id="allcards">
         <div class="cards" id="cards0"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
         <div class="cards" id="cards1"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
         <div class="cards" id="cards2"><img class="" src="./assets/rat.jpg" width="300" height="300"><br><span id="sense0">Rat!</span></div>
